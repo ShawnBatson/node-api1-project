@@ -1,7 +1,11 @@
 let users = [
-  { id: "1", name: "Jane Doe" },
-  { id: "2", name: "John Doe" },
-  { id: "3", name: "Jack Doe" },
+  {
+    id: "1", // hint: use the shortid npm package to generate it
+    name: "Jane Doe", // String, required
+    bio: "Not Tarzan's Wife, another Jane", // String, required
+  },
+  { id: "2", name: "John Doe", bio: "Not Tarzan, most definitely" },
+  { id: "3", name: "Jack Doe", bio: "No one knows who this is. Strange." },
 ];
 
 function getUsers() {

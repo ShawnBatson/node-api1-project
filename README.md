@@ -13,6 +13,8 @@
 
 ## Assignment
 
+//I got this, but it came out of left field. Might want to add this to another assignment or teach this portion now. It took a bit to figure out myself.
+
 Use Node.js and Express to build an API that performs CRUD operations on users.
 
 - Add a `.gitignore` file appropriate for `node.js` projects.
