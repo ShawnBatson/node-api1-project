@@ -19,7 +19,21 @@ server.get("/users", (req, res) => {
     });
   }
 });
+/////
 
+server.patch("/users/:id/:key", (req, res) => {
+  const patchID = req.params.id;
+  const patchKey = req.params.key;
+  const data = req.body.value;
+
+  const patchedUser = database.patchUser(patchID, patchKey, data);
+
+  console.log(patchKey);
+
+  return res.status(200).json(patchedUser);
+});
+
+/////
 server.post("/users", (req, res) => {
   if (!req.body.name) {
     return res.status(400).json({
@@ -56,7 +70,7 @@ server.get("/users/:id", (req, res) => {
 });
 
 server.delete("/users/:id", (req, res) => {
-  const user = database.getUserByID(req.params.id);
+  const user = database.getUserById(req.params.id);
 
   if (user) {
     database.deleteUser(user.id);

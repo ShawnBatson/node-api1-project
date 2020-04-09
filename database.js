@@ -26,6 +26,13 @@ function createUser(data) {
   return payload;
 }
 
+function patchUser(id, key, data) {
+  const index = users.findIndex((user) => user.id === id);
+  users[index][key] = data;
+
+  return users[index];
+}
+
 function updateUser(id, data) {
   const index = users.findIndex((user) => user.id === id);
   users[index] = {
@@ -46,4 +53,5 @@ module.exports = {
   createUser,
   updateUser,
   deleteUser,
+  patchUser,
 };
