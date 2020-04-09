@@ -50,7 +50,7 @@ server.get("/users/:id", (req, res) => {
     res.json(user);
   } else {
     res.status(404).json({
-      message: "User not found",
+      message: "The user with the specified ID does not exist.",
     });
   }
 });
@@ -62,7 +62,9 @@ server.delete("/users/:id", (req, res) => {
     database.deleteUser(user.id);
     res.status(204).end();
   } else {
-    res.status(404).json("User not found.  Nothing Deleted");
+    res.status(404).json({
+      message: "The user with the specified ID does not exist.",
+    });
   }
 });
 
