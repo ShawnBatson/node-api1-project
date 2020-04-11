@@ -24,12 +24,10 @@ server.get("/users", (req, res) => {
 server.patch("/users/:id/:key", (req, res) => {
   const patchID = req.params.id;
   const patchKey = req.params.key;
-  const data = req.body.value;
+  const data = req.body;
 
   const patchedUser = database.patchUser(patchID, patchKey, data);
-
   console.log(patchKey);
-
   return res.status(200).json(patchedUser);
 });
 
@@ -48,8 +46,8 @@ server.post("/users", (req, res) => {
   res.status(201).json(newUser);
 });
 
-server.patch("/users", (req, res) => {
-  if (req.body.name) {
+server.patch("/users/:id", (req, res) => {
+  if (!req.body.name) {
     return res.status(400).json({
       message: "No user to patch",
     });
@@ -82,6 +80,6 @@ server.delete("/users/:id", (req, res) => {
   }
 });
 
-server.listen(3000, () => {
+server.listen(4000, () => {
   console.log("server started at port 3000");
 });
