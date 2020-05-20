@@ -13,6 +13,8 @@
 
 ## Assignment
 
+//I got this, but it came out of left field. Might want to add this to another assignment or teach this portion now. It took a bit to figure out myself.
+
 Use Node.js and Express to build an API that performs CRUD operations on users.
 
 - Add a `.gitignore` file appropriate for `node.js` projects.
@@ -58,9 +60,10 @@ When the client makes a `POST` request to `/api/users`:
   - respond with HTTP status code `201` (Created).
   - return the newly created _user document_.
 
-- If there's an error while saving the _user_:
-  - respond with HTTP status code `500` (Server Error).
-  - return the following JSON object: `{ errorMessage: "There was an error while saving the user to the database" }`.
+If there's an error while saving the _user_:
+
+- respond with HTTP status code `500` (Server Error).
+- return the following JSON object: `{ errorMessage: "There was an error while saving the user to the database" }`.
 
 When the client makes a `GET` request to `/api/users`:
 
